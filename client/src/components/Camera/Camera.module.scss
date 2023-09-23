@@ -1,0 +1,14 @@
+.camera {
+    border-radius: 20px;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    .camera {
+        width: 100vw;
+        height: 600px;
+        border-radius: 0;
+    }
+}
