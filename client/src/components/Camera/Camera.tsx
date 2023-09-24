@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import cls from './Camera.module.scss'
+import send_image from './send_img'
 
-
-const Camera: React.FC = () => {
+const Camera = ({handler} : any) => {
   const cameraRef = React.useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -17,10 +17,17 @@ const Camera: React.FC = () => {
           console.error(err)
         })
     }
+    const interval = setInterval(() => {
+        send_image(cameraRef, handler)
+    }, 500)
+      return () => clearInterval(interval)
   }, [])
 
   return (
+    <div>
     <video ref={cameraRef} className={cls.camera} autoPlay muted></video>
+    {/* <button onClick={(e) => {setEmo(e)}} className={cls.btn_send}>Send Image</button> */}
+    </div>
   )
 }
 

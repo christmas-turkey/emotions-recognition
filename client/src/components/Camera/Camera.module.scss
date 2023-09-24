@@ -12,3 +12,10 @@
         border-radius: 0;
     }
 }
+
+.btn_send{
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+}
