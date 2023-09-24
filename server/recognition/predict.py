@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import os
 from .ModelService import ModelService
-# emotions = ['Angry','Disgusted','Fear','Happy','Neutral','Sad','Surprised']
-emotions = ['Злий','З огидою', 'Страх', 'Щасливий', 'Нейтральний', 'Сумний', 'Здивований']
+emotions = ['Angry','Disgusted','Fear','Happy','Neutral','Sad','Surprised']
+# emotions = ['Злий','З огидою', 'Страх', 'Щасливий', 'Нейтральний', 'Сумний', 'Здивований']
 
 model_service = ModelService()
 model_service.load()
