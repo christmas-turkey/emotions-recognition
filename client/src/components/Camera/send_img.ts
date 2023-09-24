@@ -1,5 +1,4 @@
-const send_image = async (e: any, cameraRef : any) => {
-    e.preventDefault();
+const send_image = async (cameraRef : any, handler : any) => {
 
     if (cameraRef.current) {
       const canvas = document.createElement('canvas');
@@ -19,9 +18,9 @@ const send_image = async (e: any, cameraRef : any) => {
               const response = await fetch('http://localhost:5000/api/image', {
                 method: 'POST',
                 body: formData,
-              });
-
-              if (response.ok) {
+              }).then((res) => res.json());
+              handler(response["emotion"]);
+              if (response) {
                 console.log('Image sent successfully');
               } else {
                 console.error('Failed to send image');

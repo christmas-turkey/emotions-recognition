@@ -11,6 +11,10 @@ node_modules/
 # production
 /build
 
+# datasets
+/server/recognition/unused_dataset
+/server/recognition/dataset
+
 # misc
 .DS_Store
 .env.local
