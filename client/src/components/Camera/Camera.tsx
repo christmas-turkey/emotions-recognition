@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import cls from './Camera.module.scss'
-
+import send_image from './send_img'
 
 const Camera: React.FC = () => {
   const cameraRef = React.useRef<HTMLVideoElement>(null)
@@ -20,7 +20,10 @@ const Camera: React.FC = () => {
   }, [])
 
   return (
+    <div>
     <video ref={cameraRef} className={cls.camera} autoPlay muted></video>
+    <button onClick={(e) => {send_image(e, cameraRef)}} className={cls.btn_send}>Send Image</button>
+    </div>
   )
 }
 
